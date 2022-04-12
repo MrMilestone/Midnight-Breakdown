@@ -28,6 +28,7 @@ label start:
 
     play sound engineon
     show elieen happy
+    show povcar
 
     # These display lines of dialogue.
 
