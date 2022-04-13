@@ -6,7 +6,7 @@
 define n = Character("") #narrator
 define p = Character("Paul") #Main Character
 define m = Character("Miska") #Girl NPC
-define f = Character("Friend") #No longer used
+define b = Character("Brother") #No longer used
 
 $ Name = True
 
@@ -39,7 +39,7 @@ label start:
 
     n "your stomach rumbles as you head to your car to drive to the family dinner"
 
-    f "are you coming over already, we have already preparing the food and i haven't heard a word from you"
+    b "are you coming over already, we have already preparing the food and i haven't heard a word from you"
 
     p "ugh friend always gets so impatient during the holidays, most of the family probably isn't going to be on time anyways"
 
@@ -48,7 +48,7 @@ label start:
     p "probably shouldn't complain to much though, their christmas dinners always taste the best"
 
 
-    f "hello... do you even have your phone turned on, if you don't respond we are just gonna start without you"
+    b "hello... do you even have your phone turned on, if you don't respond we are just gonna start without you"
 
 
     menu:
@@ -58,14 +58,14 @@ label start:
         "don't respond":
             n "..."
 
-    f "why is it that you can never show up on time anyways, I messaged you serveral times before hand when to be here"
+    b "why is it that you can never show up on time anyways, I messaged you serveral times before hand when to be here"
 
     menu:
         "turn off phone":
             n "beep"
 
         "phone text: i'm sorry i will try better next time":
-            f "you better..."
+            b "you better..."
 
     #image road block
     "as you were fiddeling with your phone you suddenly see a large barrier blocking the road"
@@ -100,7 +100,7 @@ label start:
 
     n "Maybe she knows the way around"
     menu:
-        "I stop by, lower my car window and ask her":
+        "I stop infront and lower my car window":
             jump A1
 
 label A1:
@@ -157,15 +157,16 @@ label A2:
         "That's a very nice name":
             m "Oh! You like it? thank you so much<3"
             $ Chances += 1
-            jump A4
+            jump A3
 
 
 
 label A3:
     scene black
     m "excuse me, I was just looking to help you since you seem to have broken down"
-    jump A4
+    jump A3
 
+    #ACT 3
 
 label A4:
 
@@ -175,7 +176,7 @@ label A4:
         #Woman runs into the distance
         #friend appears infornt of car
 
-    f "Hey man who was that person standing by your car?"
+    b "Hey man who was that person standing by your car?"
     p "Don't worry about it, let's get out of here I will explain later"
 
     n "[Chances!t]" #print Chances count
