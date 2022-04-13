@@ -48,15 +48,19 @@ label start:
 
     menu:
         "phone text: give me 5 minutes, i literally just got inside the car":
+            n "..."
 
         "don't respond":
+            n "..."
 
     f "why is it that you can never show up on time anyways, I messaged you serveral times before hand when to be here"
 
     menu:
         "turn off phone":
+            n "beep"
 
         "phone text: i'm sorry i will try better next time":
+            f "you better..."
 
     #image road block
     "as you were fiddeling with your phone you suddenly see a large barrier blocking the road"
@@ -132,7 +136,8 @@ label A1:
         #$ Nanem False
 
         m "Well #Name, I am Miska."
-        m "Since looks like we are both in a rare situation I propose a deal."
+
+        #m "Since looks like we are both in a rare situation I propose a deal."
 
 
 
