@@ -38,7 +38,7 @@ label start:
     n "it is a late cold night, lights of various christmas decorations are hanging in peoples gardens"
 
     n "just as you enter your car to head over to the family dinner you hear your phone ring."
-    b "are you coming over already, we have already preparing the food and i haven't heard a word from you"
+    b "Bro! Are you coming over already, we have already waiting the food and we haven't heard a word from you"
 
     p "ugh friend always gets so impatient during the holidays, most of the family probably isn't going to be on time anyways"
 
@@ -190,7 +190,7 @@ label A2:
 
 label A3:
     scene black
-    m "excuse me, I was just looking to help you since you seem to have broken down"
+    m "Test choice"
 
 
 
@@ -200,7 +200,13 @@ label A4:
     #ACT 3
         # good ending
     m "so do you wanna come to my place?"
-    p "i am sorry but i really have to get going now"
+
+    #menu
+
+        #"i am sorry but i really have to get going now":
+
+
+
     m "i really don't think that you should"
     p "well it's not your choice now is it"
     m "i don't think you understand how much effort i put into this"
@@ -212,15 +218,15 @@ label A4:
     n "fear paralyzes you unable to move miska reaches her hand through the window to pull the door open"
     n "at this point you have accepted your fate when you suddenly see headlights in the distance"
         #car honking noise
-<<<<<<< HEAD
-        n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
-        b "paul what are you doing all the way out here, who was that woman standing next to your car"
-        p "i will explain later let's get home quickly!"
-=======
+
+    n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
+    b "paul what are you doing all the way out here, who was that woman standing next to your car"
+    p "i will explain later let's get home quickly!"
+
     n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
     b "hey paul what's going on, who was that woman standing next to your car"
     p "i will explain later let's get home for now"
->>>>>>> 2daef44a0a1ba8656aef37552442229ef28c4539
+
 
         #epiloge
     p "that night i ended up calling the police to make a report, but in the end they were never able to find a suspect"
