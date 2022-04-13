@@ -181,8 +181,8 @@ label A3:
         n "at this point you have accepted your fate when you suddenly see headlights in the distance"
         #car honking noise
         n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
-        b "hey paul what's going on, who was that woman standing next to your car"
-        p "i will explain later let's get home for now"
+        b "paul what are you doing all the way out here, who was that woman standing next to your car"
+        p "i will explain later let's get home quickly!"
 
         #epiloge
         p "that night i ended up calling the police to make a report, but in the end they were never able to find a suspect"
