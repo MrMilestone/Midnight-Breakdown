@@ -96,7 +96,7 @@ label start:
     show frb
     show povroff
 
-    n "There is an old bus stop and a what looks to be a lady sitting a the bustop."
+    n "There is an old bus stop and a what looks to be a girl sitting a the bustop."
 
     n "Maybe she knows the way around"
     menu:
@@ -106,8 +106,6 @@ label start:
 label A1:
 
     scene frb
-    show miska i
-    show povroff
 
     p "Excuse me, lady"
 
