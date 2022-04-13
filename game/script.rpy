@@ -34,6 +34,11 @@ label start:
     show povroff
     #phone ping sound
     #image phone
+
+    n "it is a a late cold night, lights of various christmas decorations are hanging in peoples gardens"
+
+    n "your stomach rumbles as you head to your car to drive to the family dinner"
+
     f "are you coming over already, we have already preparing the food and i haven't heard a word from you"
 
     p "ugh friend always gets so impatient during the holidays, most of the family probably isn't going to be on time anyways"
