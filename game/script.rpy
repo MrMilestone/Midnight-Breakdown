@@ -194,21 +194,53 @@ label A3:
     jump A3
 
     #ACT 3
+        # good ending
+        m "so do you wanna come to my place?"
+        p "i am sorry but i really have to get going now"
+        m "i really don't think that you should"
+        p "well it's not your choice now is it"
+        m "i don't think you understand how much effort i put into this"
+        p "what?"
+        n "you suddenly feel miska grabing tightly onto your arm"
+        m "open the door paul"
+        #knife drawing effect
+        n "before you can protest, you can feel a knife being held tigthly to your throat"
+        n "fear paralyzes you unable to move miska reaches her hand through the window to pull the door open"
+        n "at this point you have accepted your fate when you suddenly see headlights in the distance"
+        #car honking noise
+        n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
+        b "hey paul what's going on, who was that woman standing next to your car"
+        p "i will explain later let's get home for now"
 
-label A4:
+        #epiloge
+        p "that night i ended up calling the police to make a report, but in the end they were never able to find a suspect"
+        p "i do wonder sometimes what they would have done if they had managed to get inside my car"
+        p "she has seen my license plate, hopefully she doesn't come back to finish the job"
+        p "one thing is for sure, i am never driving alone at night again"
 
-    scene black
-        #play Distant car
-    p "Oh thank god he is here"
-        #Woman runs into the distance
-        #friend appears infornt of car
 
-    b "Hey man who was that person standing by your car?"
-    p "Don't worry about it, let's get out of here I will explain later"
 
-    n "[Chances!t]" #print Chances count
-        #play car engine Driving
-
+        # bad ending
+        m "so do you wanna come to my place?"
+        p "you know what at this point we have been talking for so long that all the food has probably been eaten already"
+        p "so sure why not"
+        m "i'm so happy right now, let me get in this is gonna be a very short drive"
+        n "you unlock the car door and she gets into the passanger seat on your left"
+        #engine starts
+        n "after a few minutes of following her directions you notice that the road seems to go deeper and deeper into the forest"
+        n "while glancing from the road she seems to be  figeting a lot with her hands"
+        n "after a while the road stops and you hit a dead end"
+        p "uhm... miska what exactly is this place?"
+        m "paul i'm sorry but i haven't been enterily honest with you"
+        #knife drawing effect
+        n "before you can even say a word you can feel a knife enter your arm"
+        n "you try to get out of the car but as you do you can feel the knife going through your back paralyzing you"
+        n "your vision goes dark as the repeated stabbing in your back starts to feel faint"
+        #epiloge
+        n "after not showing up to the christmas dinner the family reported you missing in the early morning"
+        n "a search and resque team was sent out finding you 7 hours later laying right outside of your car in a pool of blood"
+        n "after a medical examination you were detirmend to have past away from your injuries 12 hours ago"
+        n "with no finger prints or witnesses the trail quickly ran cold and no one suspect was ever found"
 
 
 
