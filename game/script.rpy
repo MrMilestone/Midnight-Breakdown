@@ -23,67 +23,42 @@ label start:
 
 
     #SCENE 1
-    scene black
+    #phone ping sound
+    #image phone
+    f "are you coming over already, we have already preparing the food and i haven't heard a word from you"
 
+    p "ugh friend always gets so impatient during the holidays, most of the family probably isn't going to be on time anyways"
 
-    play sound engineon
-    show elieen happy
-    show povcar
+    p "probably shouldn't complain to much though, their christmas dinners always taste the best"
 
-    # These display lines of dialogue.
+    #car engine noise starts
+    #radio turns on
+    #image driving
+    #after a few seconds of driving
+    #phone ping
 
-    p "Wow time sure flies when you are working, looks like it's already dark, I guess I better get home quick."
+    f "hello... do you even have your phone turned on, if you don't respond we are just gonna start without you"
 
-    #play audio Radio on
-    #play sound Driving
+    menu:
+        "phone text: give me 5 minutes, i literally just got inside the car":
 
-    p "I wonder if there is still anything left to cook with in the fridge"
+        "don't respond":
 
-    p "Maybe I should stop by the store to pick up some extra stuff"
+    f "why is it that you can never show up on time anyways, i messaged you serveral times before hand when to be here"
 
-    p "Actually nevermind, I will just order something when I get there"
+    menu:
+        "turn off phone":
 
-    #hide povcar
+        "phone text: i'm sorry i will try better next time":
+    #hard break noises
+    #image road block
+    "as you were fiddeling with your phone you suddenly see a large barrier blocking the road"
 
-    #show road block
+    p "oh darn it just my luck, now i am gonna be late for sure"
 
-    #play sound Break noises
+    p "maybe i can cut through a forest pathway to take a short cut"
 
-    #show dark forest road
-
-    p "I wonder if there is still anything left to coock with in the fridge"
-
-    p "What the hell I don't remember this road being worked on I just drove through here this morning"
-
-    p "I guess I will just have to take a detour"
-    hide elieen happy
-
-    show ladygaga
-
-    p "This road looks pretty poorly made, I can't imagine anybody ever going through here"
-
-    #play engine stalling
-
-    #hide ladygaga
-    #show smoke coming from car
-
-    p "Awh god dammit! Just my luck, hopefully my friend is available to pic me up. Better send him a message."
-
-    #play sound radio off
-    #play audio radio
-
-    #show x2 phone pulled up infront with message (Video)
-
-    p "what was that?"
-
-    #show looking out of back window
-
-    p "I swear I just saw something pass by"
-
-    p "I must be seeing shapes in the dark, hopefully my friend gets here soon"
-
-    #play jumpscare
-    #show front view with woman
+    p "it does look pretty sketchy though, hopefully it actually leads back to the main road"
 
     #SCENE2
 
