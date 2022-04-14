@@ -257,7 +257,8 @@ label A3:
             hide miska a
             show miska pt at top
             show povroff
-            m "You could join me and call your family to let them know that you are ok"
+            m "You could join me and call your family to let them know that you will be ok..."
+            show hearts at top
             m "I promise you [Name], you will have a night you wont forget"
             $ choice2 = True
 
@@ -265,7 +266,7 @@ label A3:
 
 label A4:
     scene frb
-    show miska it at top
+    show miska c at top
     show povroff
     m "I have been waiting for ever for the last bus!"
     m "I think there are no more buses"
@@ -302,10 +303,10 @@ label A5:
     hide miska a
     show miska ct at top
     show povroff
-    m "i don't think you understand how much effort i put into this"
+    m "i don't think you understand how much effort i put into this [Name]"
     p "what?"
     n "you suddenly feel miska grabing tightly onto your arm"
-    m "open the door paul"
+    m "open the door [Name]"
         #knife drawing effect
     scene black
 
@@ -315,8 +316,8 @@ label A5:
         #car honking noise
 
     n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
-    b "paul what are you doing all the way out here, who was that woman standing next to your car"
-    p "i will explain later let's get home quickly!"
+    b "Paul what are you doing all the way out here, who was that woman standing next to your car"
+    p "I will explain later let's get home quickly!"
 
     n "the moment this happens the presure on your arm is gone as miska has run off into the forest"
     b "hey paul what's going on, who was that woman standing next to your car"
@@ -336,8 +337,8 @@ label A5:
 
 label A6:
     scene frb
-    show hearts
-    show miska pt
+    show hearts at top
+    show miska pt at top
     show povroff
         # bad ending
 
@@ -347,9 +348,11 @@ label A6:
         #engine starts
     n "after a few minutes of following her directions you notice that the road seems to go deeper and deeper into the forest"
     n "while glancing from the road she seems to be  figeting a lot with her hands"
-    n "after a while the road stops and you hit a dead end"
     hide povroff
     show hd
+    show rb
+    show povroff
+    n "after a while the road stops and you hit a dead end"
 
     p "uhm... miska what exactly is this place?"
 
