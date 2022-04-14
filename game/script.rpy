@@ -8,6 +8,10 @@ define p = Character("Paul") #Main Character
 define m = Character("Miska") #Girl NPC
 define b = Character("Brother") #No longer used
 
+$ choice1 = 0
+$ choice2 = 0
+$ choice3 = 0
+
 $ Name = _return
 
 
@@ -17,9 +21,11 @@ image miska i = "mikaidlemclosed.png"
 image miska it = "Miska Idle talking.png"
 
 #A1 Branching to different Scene
-#A2 Branching to different Scene
-#A3 Branching to different Scene
-#A4 is End Scene
+#A2 Branching to different Scene //Nothing yet
+#A3 Branching to different Scene //Nothing yet
+#A4 is End Good ending Scene
+#A5 Bad ending
+
 
 
 label start:
@@ -100,14 +106,7 @@ label start:
     n "Maybe she knows the way around"
     menu:
         "I stop infront and lower my car window":
-            jump A1
-
-label A1:
-
-    scene frb
-
-
-    p "Excuse me, miss"
+            p "Excuse me, miss"
 
     m "What's up?"
     menu:
@@ -144,71 +143,93 @@ label A1:
     m "How does it sound?"
 
     menu:
-        "Why don't you take the bus?":
-            m "I have been waiting for ever for the last bus!"
-            m "I think there is no more buses"
+        "Look, I am kind of running late to the christmas dinner":
+            m "Well if you are late, then why dont you join mine?"
+
 
         "Im not so sure about that":
             m "Come on [Name], you are not going to leave a girl alone in christmas eve, are you?"
 
 
     n "At this point the girl called Miska, is close enough for you to notice how beautiful she is"
-    n "Blue eyes, blond hair and amazing lips. She even in a red dress, probably for Christmas eve."
+    n "Blue eyes, blond hair and amazing lips. She wears a red dress, probably for Christmas eve."
 
 
     m "Are you sure I cannot change your mind?"
-    m "I dont live that far"
+    m "I dont live that far..."
+    n "She winks at me"
+    jump A1
 
+label A1:
+    scene black
+if $ choice1 = 1 , $ choice2 = 1 , $ choice3 = :
+    jump A5
+
+else:
     menu:
-        "Can you not call some one up?":
-            m "test test"
+        "If you dont live that far, how did you end up here?":
+            jump A2
 
-        "teste test":
-            m "test test"
+        "Can you not call some one to pick you up?":
+            jump A3
 
-        #m "Since looks like we are both in a rare situation I propose a deal."
+        "Why don't you take the bus?":
+            jump A4
 
-    jump A4
+
 
 
 label A2:
-    scene black
-        #show pov view with woman
-    m "Ohh! My name is Miska, nice to meet you!"
-    menu p:
-        "Hi my name is Paul.":
-            m "Paul Anderson right?"
-            p "How do you know my name?"
-            m "well uhh... I heard it from your workplace"
+    m "I came from a friends home"
+    m "I took the bus across but there was a deviation and I had to change the bus here"
+    m "The driver promised me there was another bus, but as you can see...I have been waiting for an hour now..."
+    $ choice1 = 1
 
-        "That's a very nice name":
-            m "Oh! You like it? thank you so much<3"
-            $ Chances += 1
-            jump A3
+    jump A1
+
 
 
 
 label A3:
     scene black
-    m "Test choice"
+        #show pov view with woman
+    m "My phone died an a hour ago"
+    menu:
+        "I could call someone to pick you up":
+            m "I tried before [Name], but they are all partying"
+            m "You could join me and call your family to let them know that you are ok"
+            m "I promise you [Name], you will have a night you wont forget"
+            $ choice2 = 1
 
+            jump A1
 
-
-    jump A3
 label A4:
+    m "I have been waiting for ever for the last bus!"
+    m "I think there are no more buses"
+    $ choice3 = 1
+    jump A1
+
+
+
+
+
+        #ACT 3
+label A5:
     scene black
-    #ACT 3
-        # good ending
-    m "so do you wanna come to my place?"
-
-    #menu
-
-        #"i am sorry but i really have to get going now":
 
 
+    m "so [Name], do you wanna come to my place?"
 
-    m "i really don't think that you should"
-    p "well it's not your choice now is it"
+    menu:
+
+        "You know what? At this point I have been lost for so long that all the food has probably been eaten already. So sure, why not":
+            jump A6
+
+            # good ending
+        "i am sorry but I really have to get going now":
+            m "i really don't think that you should"
+
+    p "Well it's not your choice now is it"
     m "i don't think you understand how much effort i put into this"
     p "what?"
     n "you suddenly feel miska grabing tightly onto your arm"
@@ -236,11 +257,13 @@ label A4:
 
 
 
+    return
+
+label A6:
+    scene black
         # bad ending
-    m "so do you wanna come to my place?"
-    p "you know what at this point we have been talking for so long that all the food has probably been eaten already"
-    p "so sure why not"
-    m "i'm so happy right now, let me get in this is gonna be a very short drive"
+
+    m "i'm so happy right now, let me get in, this is gonna be a very short drive"
     n "you unlock the car door and she gets into the passanger seat on your left"
         #engine starts
     n "after a few minutes of following her directions you notice that the road seems to go deeper and deeper into the forest"
