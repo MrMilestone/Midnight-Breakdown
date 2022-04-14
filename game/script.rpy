@@ -8,9 +8,9 @@ define p = Character("Paul") #Main Character
 define m = Character("Miska") #Girl NPC
 define b = Character("Brother") #No longer used
 
-$ choice1 = 0
-$ choice2 = 0
-$ choice3 = 0
+define choice1 = False
+define choice2 = False
+define choice3 = False
 
 
 $ Name = _return
@@ -206,7 +206,7 @@ label A1:
     scene frb
     show miska p at top
     show povroff
-if  choice1 == 1 and choice2 == 1 and choice3 == 1:
+if  choice1  and choice2 and choice3 :
 
     jump A5
 
@@ -232,7 +232,7 @@ label A2:
     m "I took the bus across but there was a deviation and I had to change the bus here"
     show miska c
     m "The driver promised me there was another bus, but as you can see...I have been waiting for an hour now..."
-    $ choice1 = 1
+    $ choice1 = True
 
     jump A1
 
@@ -241,35 +241,35 @@ label A2:
 
 label A3:
     scene frb
-    show miska c
-    show povroff
+    show miska c at top
+    show povroff at top
         #show pov view with woman
     m "My phone died an a hour ago"
     menu:
         "I could call someone to pick you up":
             hide povroff
             hide miska c
-            show miska a
+            show miska a at top
             show povroff
             m "I tried before [Name], but they are all partying"
 
             hide povroff
             hide miska a
-            show miska pt
+            show miska pt at top
             show povroff
             m "You could join me and call your family to let them know that you are ok"
             m "I promise you [Name], you will have a night you wont forget"
-            $ choice2 = 1
+            $ choice2 = True
 
             jump A1
 
 label A4:
     scene frb
-    show miska it
+    show miska it at top
     show povroff
     m "I have been waiting for ever for the last bus!"
     m "I think there are no more buses"
-    $ choice3 = 1
+    $ choice3 = True
     jump A1
 
 
@@ -279,7 +279,7 @@ label A4:
         #ACT 3
 label A5:
     scene frb
-    show miska pt
+    show miska pt at top
     show povroff
 
     m "so [Name], do you wanna come to my place?"
@@ -293,14 +293,14 @@ label A5:
         "i am sorry but I really have to get going now":
             hide povroff
             hide miska pt
-            show miska a
+            show miska a at top
             show povroff
             m "i really don't think that you should"
 
     p "Well it's not your choice now is it"
     hide povroff
     hide miska a
-    show miska ct
+    show miska ct at top
     show povroff
     m "i don't think you understand how much effort i put into this"
     p "what?"
