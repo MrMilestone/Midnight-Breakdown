@@ -356,7 +356,7 @@ label A6:
 
     p "uhm... miska what exactly is this place?"
 
-    m "Paul i'm sorry but i haven't been enterily honest with you"
+    m "[Name] i'm sorry but i haven't been enterily honest with you"
         #knife drawing effect
     show black
     n "before you can even say a word you can feel a knife enter your arm"
