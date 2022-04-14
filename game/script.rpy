@@ -12,13 +12,29 @@ $ choice1 = 0
 $ choice2 = 0
 $ choice3 = 0
 
+
 $ Name = _return
 
+image bigperson = im.Scale("bigperson.png", 70, 100)
 
 image fr = "forestroad.png"
 image frb = "background forest road busstop.png"
-image miska i = "mikaidlemclosed.png"
-image miska it = "Miska Idle talking.png"
+image h = "background highway night.png"
+image hd = "background highway dusk.png"
+image povp = "Car fpov 2 phone on.png"
+image povpoff = "car fpov 2 phone off.png"
+image rb = "Road block.png"
+image miska i = im.Scale ("miskaidlemclosed.png", 500, 500)
+image miska it = im.Scale ("Miska Idle talking.png", 500, 500)
+image miska p = im.Scale ("Miska pleased mouth closed.png", 500,500)
+image miska pt = im.Scale ("Miska pleased talking.png", 500, 500)
+image miska c = im.Scale ("Miska crying talking.png", 500, 500)
+image miska a = im.Scale ("Miska annoyed talking.png", 500, 500)
+image miska ct = im.Scale ("Miska crazy talking.png", 500, 500)
+
+image hearts = im.Scale("Hearts.png", 500 ,500)
+
+
 
 #A1 Branching to different Scene
 #A2 Branching to different Scene //Nothing yet
@@ -36,8 +52,8 @@ label start:
 
 
     #ACT 1
-    scene black
-    show povroff
+    scene h
+    show povp
     #phone ping sound
     #image phone
 
@@ -74,9 +90,16 @@ label start:
 
     #image road block
     "as you were fiddeling with your phone you suddenly see a large barrier blocking the road"
+    hide povp
+    show povpoff
+    show rb
 
     p "oh darn it just my luck, now i am gonna be late for sure"
 
+    n "You took a side road that takes you through the forest"
+    scene black
+    hide povpoff
+    hide rb
     n "After some time driving you come to the conclution: You are lost."
 
     #ACT2
@@ -108,6 +131,10 @@ label start:
         "I stop infront and lower my car window":
             p "Excuse me, miss"
 
+    hide povroff
+    show miska i at top
+    show povroff
+
     m "What's up?"
     menu:
          "I believe Im lost.":
@@ -121,8 +148,10 @@ label start:
             m "hehe, you lost cutie?"
             p "I believe I am. Do you know a way out of the forest?"
             $ Chances += 1
-    hide miska imc
-    show miska it
+    hide miska i
+    hide povroff
+    show miska it at top
+    show povroff
     m "What is your name?"
 
 
@@ -140,7 +169,13 @@ label start:
 
     m "Well [Name], I am Miska. What about an deal?"
     m "If you take me home, I will guide you out of the forest aaaand maybe something more."
+    hide miska it
+    hide povroff
+    show hearts
+    show miska p at top
+    show povroff
     m "How does it sound?"
+    hide hearts
 
     menu:
         "Look, I am kind of running late to the christmas dinner":
@@ -154,6 +189,10 @@ label start:
     n "At this point the girl called Miska, is close enough for you to notice how beautiful she is"
     n "Blue eyes, blond hair and amazing lips. She wears a red dress, probably for Christmas eve."
 
+    hide miska p
+    hide povroff
+    show miska pt at top
+    show povroff
 
     m "Are you sure I cannot change your mind?"
     m "I dont live that far..."
@@ -161,8 +200,14 @@ label start:
     jump A1
 
 label A1:
-    scene black
-if $ choice1 = 1 , $ choice2 = 1 , $ choice3 = :
+
+
+
+    scene frb
+    show miska p at top
+    show povroff
+if  choice1 == 1 and choice2 == 1 and choice3 == 1:
+
     jump A5
 
 else:
@@ -180,8 +225,12 @@ else:
 
 
 label A2:
+    scene frb
+    show miska it at top
+    show povroff
     m "I came from a friends home"
     m "I took the bus across but there was a deviation and I had to change the bus here"
+    show miska c
     m "The driver promised me there was another bus, but as you can see...I have been waiting for an hour now..."
     $ choice1 = 1
 
@@ -191,12 +240,23 @@ label A2:
 
 
 label A3:
-    scene black
+    scene frb
+    show miska c
+    show povroff
         #show pov view with woman
     m "My phone died an a hour ago"
     menu:
         "I could call someone to pick you up":
+            hide povroff
+            hide miska c
+            show miska a
+            show povroff
             m "I tried before [Name], but they are all partying"
+
+            hide povroff
+            hide miska a
+            show miska pt
+            show povroff
             m "You could join me and call your family to let them know that you are ok"
             m "I promise you [Name], you will have a night you wont forget"
             $ choice2 = 1
@@ -204,6 +264,9 @@ label A3:
             jump A1
 
 label A4:
+    scene frb
+    show miska it
+    show povroff
     m "I have been waiting for ever for the last bus!"
     m "I think there are no more buses"
     $ choice3 = 1
@@ -215,8 +278,9 @@ label A4:
 
         #ACT 3
 label A5:
-    scene black
-
+    scene frb
+    show miska pt
+    show povroff
 
     m "so [Name], do you wanna come to my place?"
 
@@ -227,14 +291,24 @@ label A5:
 
             # good ending
         "i am sorry but I really have to get going now":
+            hide povroff
+            hide miska pt
+            show miska a
+            show povroff
             m "i really don't think that you should"
 
     p "Well it's not your choice now is it"
+    hide povroff
+    hide miska a
+    show miska ct
+    show povroff
     m "i don't think you understand how much effort i put into this"
     p "what?"
     n "you suddenly feel miska grabing tightly onto your arm"
     m "open the door paul"
         #knife drawing effect
+    scene black
+
     n "before you can protest, you can feel a knife being held tigthly to your throat"
     n "fear paralyzes you unable to move miska reaches her hand through the window to pull the door open"
     n "at this point you have accepted your fate when you suddenly see headlights in the distance"
@@ -249,6 +323,7 @@ label A5:
     p "i will explain later let's get home for now"
 
 
+
         #epiloge
     p "that night i ended up calling the police to make a report, but in the end they were never able to find a suspect"
     p "i do wonder sometimes what they would have done if they had managed to get inside my car"
@@ -260,18 +335,27 @@ label A5:
     return
 
 label A6:
-    scene black
+    scene frb
+    show hearts
+    show miska pt
+    show povroff
         # bad ending
 
     m "i'm so happy right now, let me get in, this is gonna be a very short drive"
+    hide miska pt
     n "you unlock the car door and she gets into the passanger seat on your left"
         #engine starts
     n "after a few minutes of following her directions you notice that the road seems to go deeper and deeper into the forest"
     n "while glancing from the road she seems to be  figeting a lot with her hands"
     n "after a while the road stops and you hit a dead end"
+    hide povroff
+    show hd
+
     p "uhm... miska what exactly is this place?"
-    m "paul i'm sorry but i haven't been enterily honest with you"
+
+    m "Paul i'm sorry but i haven't been enterily honest with you"
         #knife drawing effect
+    show black
     n "before you can even say a word you can feel a knife enter your arm"
     n "you try to get out of the car but as you do you can feel the knife going through your back paralyzing you"
     n "your vision goes dark as the repeated stabbing in your back starts to feel faint"
